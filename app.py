@@ -7,9 +7,11 @@ from metrics import cnn_metrics, vgg16_metrics
 import os
 
 st.set_page_config(page_title="Wildfire Detector", layout="centered")
+
 st.title("Wildfire Image Classification")
 st.markdown("Upload a satellite or forest image to check for wildfire presence.")
 
+# Cache model loading
 @st.cache_resource
 def load_cached_model(model_path):
     if not os.path.exists(model_path):
@@ -17,6 +19,7 @@ def load_cached_model(model_path):
     model = load_model(model_path)
     return model
 
+# Upload image
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
@@ -51,6 +54,7 @@ if uploaded_file is not None:
 
         m = cnn_metrics if model_option == "Custom CNN" else vgg16_metrics
 
+        # Summary table
         st.markdown(f"**Test Accuracy:** `{m['Accuracy']}%`")
         st.markdown(f"**Test Loss:** `{m['Loss']}`")
 
