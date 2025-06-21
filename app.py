@@ -26,7 +26,7 @@ if uploaded_file is not None:
     model_option = st.radio("Select Model", ["Custom CNN", "VGG16"])
 
     if st.button("Predict"):
-        model_path = "cnn_model.h5" if model_option == "Custom CNN" else "resaved_vgg16_model.h5"
+        model_path = "resaved_cnn_model.keras" if model_option == "Custom CNN" else "resaved_vgg16_model.h5"
 
         try:
             model = load_cached_model(model_path)
