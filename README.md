@@ -1,11 +1,11 @@
 ---
 title: Wildfire Predictor
-emoji: "🔥"
-colorFrom: "red"
-colorTo: "yellow"
-sdk: "streamlit"
-sdk_version: "1.35.0"
-app_file: "app.py"
+emoji: 🔥
+colorFrom: red
+colorTo: yellow
+sdk: streamlit
+sdk_version: 1.46.0
+app_file: app.py
 pinned: false
 ---
 
